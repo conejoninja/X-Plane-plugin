@@ -12,6 +12,7 @@ TM1638 modules[] = {
 
 void setup() {
       Serial.begin(57600);
+      bootup();
 }
 
 char string[4][8];
@@ -66,5 +67,37 @@ void loop() {
         }
     }
     delay(200);
+}
+
+void clearDisplay() {
+    modules[0].clearDisplay();
+    modules[1].clearDisplay();
+    modules[2].clearDisplay();
+    modules[3].clearDisplay();
+}
+
+void bootup() {
+    clearDisplay();
+    modules[0].setDisplayToString("BOOT UP ");
+    modules[1].setDisplayToString("BOOT UP ");
+    modules[2].setDisplayToString("BOOT UP ");
+    modules[3].setDisplayToString("BOOT UP ");
+    delay(200);
+    clearDisplay();
+    delay(200);
+    modules[0].setDisplayToString("BOOT UP ");
+    modules[1].setDisplayToString("BOOT UP ");
+    modules[2].setDisplayToString("BOOT UP ");
+    modules[3].setDisplayToString("BOOT UP ");
+    delay(200);
+    clearDisplay();
+    delay(200);
+    modules[0].setDisplayToString("PANEL 1 ");
+    modules[1].setDisplayToString("PANEL 2 ");
+    modules[2].setDisplayToString("PANEL 3 ");
+    modules[3].setDisplayToString("PANEL 4 ");
+    delay(2000);
+    clearDisplay();
+    
 }
 
